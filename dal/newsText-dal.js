@@ -4,7 +4,7 @@ export async function getAllNews() {
   try {
     
     const res = await fetch(`${process.env.API_URL}/api/v1/news`);
-    console.log(res);
+    // console.log(res);
 
     if(!res.ok){
         throw new Error({message: res.statusText})
