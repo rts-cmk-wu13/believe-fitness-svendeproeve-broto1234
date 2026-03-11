@@ -1,5 +1,4 @@
 import { getAllTestimonials } from "../../../dal/testimonial-dal";
-// import CommentCard from "./CommentCard";
 import TestimonialCard from "./TestimonealCard";
 
 export default async function Testimonials() {
@@ -7,7 +6,7 @@ export default async function Testimonials() {
   // console.log("Testimonials in component:", testimonials);
 
   return (
-    <section className="my-20">
+    <section className="testimonials bg-[url('/splashImgTwo.png')] bg-cover bg-center bg-no-repeat">
       <TestimonialCard testimonials={testimonials} />
     </section>
   );

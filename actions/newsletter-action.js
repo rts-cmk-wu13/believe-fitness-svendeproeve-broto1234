@@ -7,13 +7,7 @@ import { getNewsletter } from "@/dal/newsletter-dal";
 export async function newsletterAction( prevState, formData ) {
 
   const email = formData.get("email");
-  // console.log("prevState...:", prevState);
-
-  if ( prevState?.values && 
-        email === prevState.values.email ) {
-    return prevState;
-  }
-
+  
   const emailParse = newsletterSchema.safeParse({ email });
   
   if (!emailParse.success) {

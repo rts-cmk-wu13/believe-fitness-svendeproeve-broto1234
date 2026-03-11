@@ -2,6 +2,7 @@
 
 import { useActionState, useState, useEffect } from "react";
 import { contactData } from "@/actions/contactus-action";
+import Button from "@/components/ui/buttonLink";
 
 const initialState = {
   values: {
@@ -22,17 +23,16 @@ export default function ContactUs() {
       setShowSuccess(true);
       const timer = setTimeout(() => {
         setShowSuccess(false);
-      }, 3000);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, [state?.success]);
 
   return (
-    <section className="my-16 px-4">
+    <section className="contactUs px-4">
       <h2 className="text-2xl font-bold">Contact us</h2>
       <p className="text-sm my-4">Ask us anything about Believe Fitness!</p>
-      <form action={formAction} noValidate className="mt-4 flex flex-col space-y-2">                
-      {/* <form className="mt-4 flex flex-col space-y-2">                 */}
+      <form action={formAction} noValidate className="mt-4 flex flex-col space-y-2">  
         <div>
           <input 
             type="text"
@@ -63,14 +63,9 @@ export default function ContactUs() {
           ></textarea>
           {state?.errors?.message && <p className="text-red-500 text-xs mt-1">{state.errors.message}</p>}
         </div>
-        <button
-          type="submit"
-          disabled={isPending}        
-          className="w-full py-3 mt-2 bg-primaryColor text-md text-black rounded-4xl uppercase hover:bg-primaryColor/70">
-            {isPending ? "Sending..." : "Send Message"}
-        </button> 
+        <Button type="submit" btText={isPending ? "Sending..." : "Send Message"} disabled={isPending} className="w-full py-3 mt-2 bg-primaryColor text-sm font-semibold text-black rounded-4xl uppercase hover:bg-primaryColor/70"/>
         {showSuccess && <p className="text-green-500 text-xs mt-2">Message sent successfully!</p>}
-        {/* {state?.errors?.general && <p className="text-red-500 text-xs mt-2">{state.errors.general}</p>} */}
+        {state?.errors?.general && <p className="text-red-500 text-xs mt-2">{state.errors.general}</p>}
       </form>
     </section>
   );

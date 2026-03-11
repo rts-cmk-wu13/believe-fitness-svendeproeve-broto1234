@@ -2,6 +2,7 @@
 
 import { useActionState, useState, useEffect } from "react";
 import { newsletterAction } from "@/actions/newsletter-action";
+import Button from "@/components/ui/buttonLink";
 
 const initialState = {
   values: {
@@ -28,28 +29,26 @@ export default function Newsletter() {
       setIsSuccess(false);
     }     
   }, [state?.success, state?.errors]);
-
     // console.log("state:", state);
 
   return (  
-    <section className="my-4 px-4">
+    <section className="newsletter px-4">
+      <p className="w-9 mx-auto h-0.5 bg-black mb-8"></p>
       <h2 className="text-xl font-bold">Sign up for our newsletter</h2>
-      <p className="text-md/7 my-8">Sign up to receive the latest news and announcements from Believe Fitness</p>
-      <form className="mt-4 grid grid-cols-3 items-center justify-between gap-2" action={formAction} noValidate>
-        <div className="col-span-2">
+      <p className="text-sm my-5">Sign up to receive the latest news and announcements from Believe Fitness</p>
+      <form className="grid grid-cols-3 items-center justify-between gap-2" action={formAction} noValidate>
+        <div className="relative col-span-2">
           <input
             type="email"
             name="email"
             placeholder="Enter your email..."
             defaultValue={state?.values?.email}
-            className="w-full px-2 py-2 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-700 bg-white text-md text-gray-700"
+            className="w-full px-4 py-2 border border-gray-400 rounded-full focus:outline-none focus:ring-1 focus:ring-gray-600 bg-white text-sm text-gray-700"
           />
-          {state?.errors?.email && <p className="text-red-500 text-xs">{state.errors.email}</p>}
+          {state?.errors?.email && <p className="absolute text-red-500 text-xs">{state.errors.email}</p>}
         </div>
         {state?.errors?.form && <p className="text-red-500 text-xs mt-1">{state.errors.form}</p>}
-        <button type="submit" disabled={isPending} className="p-3 bg-primaryColor text-xs font-semibold uppercase text-black cursor-pointer rounded-full hover:bg-primaryColor/70 hover:text-foreground">
-          {isPending ? "Signing up..." : "Sign up"}
-        </button> 
+        <Button type="submit" btText={isPending ? "Signing up..." : "Sign up"} disabled={isPending} className="px-1 py-3 bg-primaryColor text-xs font-semibold uppercase text-black cursor-pointer rounded-full hover:bg-primaryColor/70 hover:text-foreground"/>
         {isSuccess && <p className="w-120 text-green-500 text-md -mt-2">Signed up successfully!</p>}
         {state?.errors && !state?.errors?.email && <p className="text-red-500 text-xs mt-1">Error signing up</p>}
       </form>

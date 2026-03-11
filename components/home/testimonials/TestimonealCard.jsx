@@ -18,18 +18,18 @@ export default function TestimonialCard( {testimonials} ) {
   };
 
   return (
-    <section className="flex flex-col items-center gap-4 text-white py-16  bg-[url('/splashImgTwo.png')] bg-cover bg-center bg-no-repeat">
-        <h2 className="w-70 text-4xl text-center font-bold">A word from other Believers</h2>
-        <div className="text-center">
-          <div className="flex flex-col justify-between my-4 h-30">
-            <p className="text-xl px-8">{currentTestimonial.text}</p>
-            <p className="text-3xl font-semibold mt-4">{currentTestimonial.name}</p>
+    <div className="flex flex-col items-center justify-center gap-4 text-white my-10">
+        <h2 className="w-70 text-2xl text-balance text-center font-bold">A word from other Believers</h2>
+        <div className="text-center relative flex flex-col items-center gap-4">
+          <div className="h-30 flex flex-col justify-between my-4">
+            <p className="text-sm px-8">{currentTestimonial.text}</p>
+            <p className="text-md font-semibold mt-4">{currentTestimonial.name}</p>
           </div>
-          <div className="flex gap-2 justify-center mt-16">
-            <TfiArrowCircleLeft className="hover:text-orange-600 cursor-pointer" size={90} onClick={handlePrev} />
-            <TfiArrowCircleRight className="hover:text-orange-600 cursor-pointer" size={90} onClick={handleNext} />
+          <div className="flex gap-4 justify-center">
+            <TfiArrowCircleLeft className="hover:text-orange-600 cursor-pointer" size={50} onClick={handlePrev} />
+            <TfiArrowCircleRight className="hover:text-orange-600 cursor-pointer" size={50} onClick={handleNext} />
           </div>
         </div>
-      </section>
+      </div>
   )
 }

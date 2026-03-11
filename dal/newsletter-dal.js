@@ -1,4 +1,4 @@
-//---- Get Newsletter Subscribers -----//
+
 export async function getNewsletter(email) {
   const res = await fetch(`${process.env.API_URL}/api/v1/newsletter`, {
       method: "POST",
