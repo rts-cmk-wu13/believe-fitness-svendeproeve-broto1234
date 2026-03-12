@@ -19,12 +19,12 @@ Eftermiddag - 15:00
 ## Dag 3
 
 Morgen - 8:12  
-Eftermiddag - (tidspunkt)
+Eftermiddag - 15:00
 
 ## Dag 4
 
-Morgen - (tidspunkt)  
-Eftermiddag - (tidspunkt)
+Morgen - 8:15  
+Eftermiddag - 15.45
 
 ## Dag 5
 

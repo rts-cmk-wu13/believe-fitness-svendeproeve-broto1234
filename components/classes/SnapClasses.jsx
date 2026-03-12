@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { IoStar } from "react-icons/io5";
 
-export default function SnapClasses({ classes }) {
+export default function SnapClasses({ classes, handleClick }) {
 
   console.log("Classes in SnapClasses:", classes);
 
@@ -13,7 +13,7 @@ export default function SnapClasses({ classes }) {
             <div 
               key={cls.id} 
               className="w-24 snap-start"
-              onClick={() => setBigImage(cls)}
+              onClick={() => handleClick(cls)}
             >
               <div className="relative w-24 h-32 overflow-hidden rounded-lg">
                 <Image src={cls.asset.url} alt={cls.className} width={400} height={400} className="w-full h-full object-cover" />

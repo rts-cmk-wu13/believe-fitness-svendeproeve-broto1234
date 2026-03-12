@@ -4,8 +4,9 @@ import { IoStar } from "react-icons/io5";
 import { IoArrowBackOutline } from "react-icons/io5";
 import Button from "@/components/ui/buttonLink";
 import TrainerCard from "../ui/trainerCard";
+import AddClass from "@/components/classes/AddClass";
 
-export default function ClassDetailsCard( { classItems, trainers } ) {
+export default function ClassDetailsCard( { user, classItems, trainers, isUserEnrolled } ) {
   // console.log("Class in ClassDetailCard:", classItems.trainer.id);
   // console.log("Trainers in ClassDetailCard:", trainers[0].id);
 
@@ -47,7 +48,9 @@ export default function ClassDetailsCard( { classItems, trainers } ) {
             </div>
           </div> */}
           <div className="flex gap-4">
-          <Button btHref="/signup" btText="Sign Up" className="w-full mx-auto text-center text-black font-semibold text-xs px-6 py-2 rounded-full uppercase  bg-primaryColor" />
+          <AddClass user={user} classItems={classItems} isUserEnrolled={isUserEnrolled} />
+
+          {/* <Button btHref="/signup" btText="Sign Up" className="w-full mx-auto text-center text-black font-semibold text-xs px-6 py-2 rounded-full uppercase  bg-primaryColor" /> */}
           </div>
         </div>
       </div>

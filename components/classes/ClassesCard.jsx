@@ -8,6 +8,9 @@ export default function ClassesCard( { classes, randomClass } ) {
   const [bigImage, setBigImage] = useState(randomClass);
   // console.log("Classes in ClassesCard:", classes);
   console.log("Random Class:", randomClass);
+  const handleClassClick = (cls) => {
+    setBigImage(cls);
+  }
   
   return (
     <section className="px-6 py-10">
@@ -19,7 +22,7 @@ export default function ClassesCard( { classes, randomClass } ) {
 
       <div>
         <h2 className="text-sm font-bold mb-2">Classes for You</h2>
-        <SnapClasses classes={classes} />
+        <SnapClasses classes={classes} handleClick={handleClassClick} />
       </div>
     </section>
   )
