@@ -157,3 +157,12 @@ The `formData` object contains the values submitted by the user through the logi
 After validation, the application sends the login credentials to an authentication API using the **Fetch API** (`fetch()`). The request includes **headers** to indicate that the body contains **JSON data**. Before sending the request, the data is converted into JSON format using `JSON.stringify()`.
 
 When authentication is successful, the returned **JWT token** is stored in a cookie using `cookies().set()`. Finally, the application uses `redirect()` to navigate the user to the appropriate page after the server-side login process completes.
+
+
+## Learning Goals Demonstrated
+
+- Understanding Next.js App Router architecture
+- Using Fetch API in both server and client contexts
+- Separation of concerns (UI, logic, validation)
+- Managing dynamic and query-based routing
+- Server-side validation (never trust client input)

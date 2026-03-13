@@ -15,7 +15,7 @@ export default async function instructorDetail({ params }) {
       <h2>My Profile</h2>
       <section className="flex flex-col justify-between items-center">
       <div className="w-full flex items-center gap-3 bg-white text-background text-center my-4">
-        <div className="w-12 h-12 rounded-full bg-primaryColor flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-primaryColor flex items-center justify-center">
           <Image src={trainer.asset.url} alt={trainer.trainerName} width={32} height={32} />
         </div>
         <div className="text-left">
