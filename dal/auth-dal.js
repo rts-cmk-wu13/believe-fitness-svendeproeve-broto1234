@@ -7,7 +7,8 @@ export async function loginUser({ username, password}) {
   });
 
   if (!res.ok) {
-      throw new Error("Failed to send message");
+      return null;
   }
+  
   return await res.json();
 }

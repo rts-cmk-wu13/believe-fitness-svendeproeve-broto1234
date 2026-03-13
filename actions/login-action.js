@@ -10,7 +10,6 @@ export async function loginData( prevState, formData ) {
   console.log("cookies...:", cookiesStore);
   const username = formData.get("username");
   const password = formData.get("password");
-  // console.log("prevState...:", prevState);
 
   const validationResult = loginSchema.safeParse({ username, password });
   

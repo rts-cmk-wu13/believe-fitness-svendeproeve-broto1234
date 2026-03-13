@@ -17,8 +17,6 @@ export async function newsletterAction( prevState, formData ) {
   }
 
   await getNewsletter(email);  
-  // console.log("Server response:", result);
 
   return { success: true };
-  // return { success: true, values: { email }, errors: undefined };
 }

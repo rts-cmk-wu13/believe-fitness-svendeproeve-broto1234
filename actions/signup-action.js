@@ -1,4 +1,4 @@
-"use server";
+"use server"
 
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -12,7 +12,6 @@ export async function signupData( prevState, formData ) {
   const username = formData.get("username");
   const password = formData.get("password");
   const confirmPassword = formData.get("confirmPassword");
-  // console.log("prevState...:", prevState);
   
   const validationResult = signupSchema.safeParse({ userFirstName, userLastName, username, password, confirmPassword });
 
@@ -32,8 +31,6 @@ export async function signupData( prevState, formData ) {
     };
   }
 
-  // const result = await res.json();
-  // console.log("Signup result:", result);
     cookiesStore.set("accessToken", result.token);
     cookiesStore.set("userId", result.userId);
 

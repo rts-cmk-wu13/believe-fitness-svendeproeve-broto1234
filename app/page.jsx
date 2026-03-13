@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Button from "@/components/ui/buttonLink";
 import BelieveHeader from "@/components/ui/believeHeader";
 
@@ -30,12 +29,6 @@ export default function SplashPage() {
       <div className="w-full flex justify-center mt-10">
         <Button btHref="/home" btText="Start Training" className={`text-black font-semibold text-[10px] px-4 py-2 rounded-full uppercase bg-primaryColor transition-opacity duration-500 ${isButtonVisible ? "opacity-100" : "opacity-0"}`} />
       </div>
-        {/* <Link
-        href="/home"
-        className={`text-black font-semibold text-[10px] px-4 py-2 rounded-full uppercase bg-primaryColor transition-opacity duration-500 ${isButtonVisible ? "opacity-100" : "opacity-0"}`}
-        >
-          Start Training
-        </Link> */}
     </div>    
   );
 }

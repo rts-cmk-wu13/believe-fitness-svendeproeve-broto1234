@@ -6,7 +6,7 @@ import { LuAlignRight } from "react-icons/lu";
 export default function Nav() {
   const pathname = usePathname();
   const grayNav = ["/classes", "/search", "/profile", "/instructor"];
-  const navColor = grayNav.includes(pathname) ? "text-gray-500" : "text-white";
+  const navColor = grayNav.some(path => pathname.startsWith(path)) ? "text-gray-500" : "text-white";
 
   return (
     <div className="fixed top-6 right-6 flex justify-end z-999">

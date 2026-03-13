@@ -8,6 +8,7 @@ export default function ClassesCard( { classes, randomClass } ) {
   const [bigImage, setBigImage] = useState(randomClass);
   // console.log("Classes in ClassesCard:", classes);
   console.log("Random Class:", randomClass);
+  
   const handleClassClick = (cls) => {
     setBigImage(cls);
   }

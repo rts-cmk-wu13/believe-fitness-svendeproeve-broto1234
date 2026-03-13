@@ -1,6 +1,8 @@
 "use server"
+
 import { cookies } from "next/headers";
-import { redirect, revalidatePath } from "next/navigation";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { addClass } from "@/dal/addClass-dal";
 
 export async function addUserToClass(classId, isUserEnrolled) {

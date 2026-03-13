@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState, useEffect, useActionState } from "react";
 import Link from "next/link";
 import Button from "@/components/ui/buttonLink";
 import { loginData } from "@/actions/login-action";
@@ -16,6 +16,17 @@ const initialState = {
 
 export default function LoginForm() {
   const [state, formAction, isPending] = useActionState(loginData, initialState);
+  const [showSuccess, setShowSuccess] = useState(false);
+  
+    useEffect(() => {
+      if (state?.success) {
+        setShowSuccess(true);
+        const timer = setTimeout(() => {
+          setShowSuccess(false);
+        }, 5000);
+        return () => clearTimeout(timer);
+      }
+    }, [state?.success]);
 
   return (
     <section className="">
@@ -41,8 +52,8 @@ export default function LoginForm() {
           {state?.errors?.password && <p className="text-red-500 text-xs mt-1">{state.errors.password}</p>}
         </div>
         <Button type="submit" btText={isPending ? "Logging..." : "Log in"} disabled={isPending} className="w-full py-3 mt-2 bg-primaryColor text-sm font-semibold text-black rounded-4xl uppercase hover:bg-primaryColor/70"/>        
-        {/* {showSuccess && <p className="text-green-500 text-xs mt-2">Login successful!</p>} */}
-        {/* {state?.errors?.form && <p className="text-red-500 text-xs mt-2">{state.errors.form}</p>} */}
+        {showSuccess && <p className="text-green-500 text-xs mt-2">Login successful!</p>}
+        {state?.errors?.form && <p className="text-red-500 text-xs mt-2">{state.errors.form[0]}</p>}
         <p className="text-xs mt-2 text-center text-gray-500">Are You not yet a Believer? <br/> 
           <Link href="/signup" className="underline underline-offset-3">Sign up here</Link> to start training like a pro.
         </p>

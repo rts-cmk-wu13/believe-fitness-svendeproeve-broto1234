@@ -5,7 +5,7 @@ export async function fetchUserById(userId, accessToken) {
 
   const url = `${process.env.API_URL}/api/v1/users/${userId}`;
 
-  console.log("fetching from:", url);
+  // console.log("fetching from:", url);
   
   const res = await fetch(url, {
     method: "GET",

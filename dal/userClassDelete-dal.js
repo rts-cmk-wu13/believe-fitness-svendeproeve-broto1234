@@ -17,6 +17,12 @@ export async function deleteUserFromClass(userId, classId, accessToken) {
   }
 
   const text = await res.text();
+  if(!text) {
+    return {
+      success: true,
+      message: "User successfully removed from class"
+    };
+  }
 
   return JSON.parse(text);
 }
